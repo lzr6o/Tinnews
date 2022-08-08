@@ -1,4 +1,4 @@
-package com.laioffer.tinnews.home;
+package com.laioffer.tinnews.ui.home;
 
 import android.os.Bundle;
 
@@ -10,11 +10,6 @@ import android.view.ViewGroup;
 
 import com.laioffer.tinnews.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class HomeFragment extends Fragment {
 
     @Override
