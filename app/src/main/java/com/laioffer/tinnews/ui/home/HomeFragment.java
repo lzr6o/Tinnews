@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.laioffer.tinnews.R;
 import com.laioffer.tinnews.repository.NewsRepository;
+import com.laioffer.tinnews.repository.NewsViewModelFactory;
 
 public class HomeFragment extends Fragment {
 
@@ -35,7 +37,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         NewsRepository repository = new NewsRepository();
-        viewModel = new HomeViewModel(repository);
+        viewModel = new ViewModelProvider(this, new NewsViewModelFactory(repository)).get(HomeViewModel.class);
         viewModel.setCountryInput("us");
         viewModel
                 .getTopHeadlines()
